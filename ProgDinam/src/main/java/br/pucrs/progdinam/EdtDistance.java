@@ -79,7 +79,7 @@ public class EdtDistance {
 //					custoExtra = 0 //Operação M;
 //				Senão
 //					custoExtra = 1 //Operação S;
-//					matriz[i][j] = Mínimo(matriz[i-1][j] +1, matriz[i][j-1] +1,
+//				matriz[i][j] = Mínimo(matriz[i-1][j] +1, matriz[i][j-1] +1,
 //											matriz[i-1][j-1] + custoExtra);
 //		
 //		devolva matriz[m][n];
