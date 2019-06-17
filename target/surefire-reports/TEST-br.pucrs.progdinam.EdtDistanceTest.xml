@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="br.pucrs.progdinam.EdtDistanceTest" time="0.023" tests="16" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="br.pucrs.progdinam.EdtDistanceTest" time="0.042" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\ProgDinam\ProgDinam\target\test-classes;D:\Users\mcmor\Dropbox\M\WSGitLocalNew\ProgDinam\ProgDinam\target\classes;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter\5.4.2\junit-jupiter-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\mcmor\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-commons\1.4.2\junit-platform-commons-1.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.4.2\junit-jupiter-params-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-engine\1.4.2\junit-platform-engine-1.4.2.jar;"/>
+    <property name="java.class.path" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\DynamicProg\target\test-classes;D:\Users\mcmor\Dropbox\M\WSGitLocalNew\DynamicProg\target\classes;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter\5.4.2\junit-jupiter-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\mcmor\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-commons\1.4.2\junit-platform-commons-1.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.4.2\junit-jupiter-params-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-engine\1.4.2\junit-platform-engine-1.4.2.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -17,9 +17,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\mcmor\AppData\Local\Temp\surefire2659302818195517807\surefirebooter3011186421027348889.jar C:\Users\mcmor\AppData\Local\Temp\surefire2659302818195517807 2019-06-17T17-43-43_180-jvmRun1 surefire9879021662677858202tmp surefire_012798973207177685898tmp"/>
+    <property name="sun.java.command" value="C:\Users\mcmor\AppData\Local\Temp\surefire11759712110861403474\surefirebooter10305287766878852303.jar C:\Users\mcmor\AppData\Local\Temp\surefire11759712110861403474 2019-06-17T20-51-22_004-jvmRun1 surefire11054262449080683714tmp surefire_010611159077566171169tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\ProgDinam\ProgDinam\target\test-classes;D:\Users\mcmor\Dropbox\M\WSGitLocalNew\ProgDinam\ProgDinam\target\classes;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter\5.4.2\junit-jupiter-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\mcmor\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-commons\1.4.2\junit-platform-commons-1.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.4.2\junit-jupiter-params-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-engine\1.4.2\junit-platform-engine-1.4.2.jar;"/>
+    <property name="surefire.test.class.path" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\DynamicProg\target\test-classes;D:\Users\mcmor\Dropbox\M\WSGitLocalNew\DynamicProg\target\classes;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter\5.4.2\junit-jupiter-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\mcmor\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-commons\1.4.2\junit-platform-commons-1.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.4.2\junit-jupiter-params-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\mcmor\.m2\repository\org\junit\platform\junit-platform-engine\1.4.2\junit-platform-engine-1.4.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\mcmor"/>
     <property name="user.language" value="en"/>
@@ -27,13 +27,13 @@
     <property name="java.version.date" value="2018-10-16"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.1"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\ProgDinam\ProgDinam"/>
+    <property name="basedir" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\DynamicProg"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\mcmor\AppData\Local\Temp\surefire2659302818195517807\surefirebooter3011186421027348889.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\mcmor\AppData\Local\Temp\surefire11759712110861403474\surefirebooter10305287766878852303.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.1+13-LTS"/>
@@ -48,7 +48,7 @@
     <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\mcmor\AppData\Local\Temp\"/>
     <property name="java.version" value="11.0.1"/>
-    <property name="user.dir" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\ProgDinam\ProgDinam"/>
+    <property name="user.dir" value="D:\Users\mcmor\Dropbox\M\WSGitLocalNew\DynamicProg"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
@@ -60,20 +60,20 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="EdProgDinamTest1" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.006"/>
+  <testcase name="EdProgDinamTest1" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.013"/>
   <testcase name="EdProgDinamTest2" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
   <testcase name="EdProgDinamTest3" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
-  <testcase name="EdProgDinamTest4" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
-  <testcase name="EdProgDinamTest5" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
-  <testcase name="EdRecursiveTest1" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
+  <testcase name="EdProgDinamTest4" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
+  <testcase name="EdProgDinamTest5" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
+  <testcase name="EdRecursiveTest1" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
   <testcase name="EdRecursiveTest2" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
   <testcase name="EdRecursiveTest3" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
   <testcase name="EdRecursiveTest4" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
   <testcase name="EdRecursiveTest5" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
-  <testcase name="minTestComb1" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
-  <testcase name="minTestComb2" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
+  <testcase name="minTestComb1" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
+  <testcase name="minTestComb2" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
   <testcase name="minTestComb3" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
-  <testcase name="minTestComb4" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
+  <testcase name="minTestComb4" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
   <testcase name="minTestComb5" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
-  <testcase name="minTestComb6" classname="br.pucrs.progdinam.EdtDistanceTest" time="0"/>
+  <testcase name="minTestComb6" classname="br.pucrs.progdinam.EdtDistanceTest" time="0.001"/>
 </testsuite>
