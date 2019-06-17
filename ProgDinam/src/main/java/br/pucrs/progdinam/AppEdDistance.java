@@ -6,7 +6,7 @@ public class AppEdDistance {
 		EdtDistance ed = new EdtDistance();
 		
 		long res = 0;
-	
+	 
 		res = ed.EDProgDinam("abcdefghijklmnop",  "rstuvwxyz");
 		System.out.println("res Dinam = " + res);
 		res = ed.EDRecursive("abcdefghijklmnop",  "rstuvwxyz");
