@@ -4,7 +4,7 @@ public class AppEdDistance {
 
 	public static void main(String[] args) {
 		EdtDistance ed = new EdtDistance();
-		
+		 
 		long res = 0;
 	 
 		res = ed.EDProgDinam("abcdefghijklmnop",  "rstuvwxyz");
