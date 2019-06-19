@@ -22,7 +22,6 @@ public class Knapsack {
 
 	private static long KnapSackRecursive(int item, long capacidade, long[]pesos, long[]valores) {
 		long res = 0;
-		int nroItens = pesos.length;
 		
 		if (item == -1)
 			res = 0;
@@ -30,7 +29,7 @@ public class Knapsack {
 				res = KnapSackRecursive(item-1, capacidade, pesos, valores);
 		else 
 				res = Math.max(KnapSackRecursive(item-1, capacidade, pesos, valores), 
-								KnapSackRecursive(item-1, capacidade - pesos[item], pesos, valores));
+								KnapSackRecursive(item-1, capacidade - pesos[item], pesos, valores) + valores[item]);
 		
 		return res;
 	}
