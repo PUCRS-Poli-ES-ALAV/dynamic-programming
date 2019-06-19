@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: br.pucrs.progdinam.EdtDistanceTest
+Test set: br.pucrs.progdinam.KnapsackTest
 -------------------------------------------------------------------------------
-Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in br.pucrs.progdinam.EdtDistanceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in br.pucrs.progdinam.KnapsackTest
