@@ -18,6 +18,16 @@ public class AppDemo {
 		System.out.println("Distancia (Prog Dinam) = " + res);
 		res = ed.EDRecursive(str1, str2);
 		System.out.println("Distancia (Recursive) " + res);
+
+		System.out.println("Edit Distance\n");
+		str1 = "abcdefghijklmnop";
+		str2 = "rstuvwxyz";
+		System.out.println("Textos: \n" + "String 1: " + str1 + "\nString 2: " + str2);
+		res = ed.EDProgDinam(str1, str2);
+		System.out.println("Distancia (Prog Dinam) = " + res);
+		res = ed.EDRecursive(str1, str2);
+		System.out.println("Distancia (Recursive) " + res);
+
 		
 		str1 = "Maven, a Yiddish word meaning";
 		str2 = "This post is not about deep";
