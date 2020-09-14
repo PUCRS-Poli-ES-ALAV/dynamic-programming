@@ -74,4 +74,9 @@ class EdtDistanceTest {
 	void EdProgDinamTest5() {
 		assertEquals(5, ed.EDProgDinam("intention", "execution"));
 	}
+	
+	@Test
+	void EdProgDinamTest6() {
+		assertEquals(10, ed.EDProgDinam("Casablanca", "Portentoso"));
+	}
 }
