@@ -11,13 +11,23 @@ public class AppDemo {
 		long [] valor;
 	 
 		System.out.println("Edit Distance\n");
-		str1 = "O dia da semana";
-		str2 = "quinta ou";
+		str1 = "Casablanca";
+		str2 = "Portentoso";
 		System.out.println("Textos: \n" + "String 1: " + str1 + "\nString 2: " + str2);
 		res = ed.EDProgDinam(str1, str2);
 		System.out.println("Distancia (Prog Dinam) = " + res);
 		res = ed.EDRecursive(str1, str2);
 		System.out.println("Distancia (Recursive) " + res);
+
+		System.out.println("Edit Distance\n");
+		str1 = "abcdefghijklmnop";
+		str2 = "rstuvwxyz";
+		System.out.println("Textos: \n" + "String 1: " + str1 + "\nString 2: " + str2);
+		res = ed.EDProgDinam(str1, str2);
+		System.out.println("Distancia (Prog Dinam) = " + res);
+		res = ed.EDRecursive(str1, str2);
+		System.out.println("Distancia (Recursive) " + res);
+
 		
 		str1 = "Maven, a Yiddish word meaning";
 		str2 = "This post is not about deep";
@@ -63,5 +73,22 @@ public class AppDemo {
 		System.out.println("");
 		res = KnapSack.knapSackRecursive(165, pieces);
 		System.out.println("Maior valor (Knapsack Recursivo) = " + res );
+		
+		pieces = new KnapSack.KnapSackPiece[6];
+		pieces[0] = new KnapSack.KnapSackPiece(56, 50);
+		pieces[1] = new KnapSack.KnapSackPiece(59, 50);
+		pieces[2] = new KnapSack.KnapSackPiece(80, 64);
+		pieces[3] = new KnapSack.KnapSackPiece(64, 46);
+		pieces[4] = new KnapSack.KnapSackPiece(75, 50);
+		pieces[5] = new KnapSack.KnapSackPiece(17, 05);
+
+		System.out.println("\nPares: (peso, valor)");
+		for (int i = 0; i < pieces.length; i ++) {
+			System.out.print("(" + pieces[i].getPeso() + ", " + pieces[i].getValor() + ")");
+		}
+		System.out.println("");
+		res = KnapSack.knapSackRecursive(190, pieces);
+		System.out.println("Maior valor (Knapsack Recursivo) = " + res );
+
 	}
 }

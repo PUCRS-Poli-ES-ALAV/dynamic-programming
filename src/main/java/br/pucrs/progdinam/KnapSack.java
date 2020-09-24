@@ -53,7 +53,7 @@ public class KnapSack {
 		return res;
 	}
 
-	public static long knapsackProgDinam(long capacidade, long[]pesos, long[]valores) {
+	public static long knapsackProgDinam(long capacidade, KnapSackPiece[] pieces) {
 //			N = número de produtos;
 //			C = capacidade real da mochila
 //		
@@ -71,13 +71,18 @@ public class KnapSack {
 //			
 //			Retorne maxTab[N][C] 
 		long res = 0;
+		long maxTab[][] = new long[pieces.length+1][(int) (capacidade + 1)];
+		
+		for (int linha = 0; linha < pieces.length + 1; linha++)
+			for (int coluna = 0; coluna < capacidade + 1; coluna ++)
+				maxTab[linha][coluna] = 0;
+		
 		
 		return res;
 	}
 	
 	public static long knapsackGreedy(long capacidade, KnapSackPiece[] pieces) {
 		long res = 0;
-		
 		
 		
 		return res;

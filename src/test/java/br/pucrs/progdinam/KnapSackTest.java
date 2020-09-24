@@ -66,10 +66,7 @@ class KnapSackTest {
 		pieces[12] = new KnapSack.KnapSackPiece(115, 221);
 		pieces[13] = new KnapSack.KnapSackPiece(118, 229);
 		pieces[14] = new KnapSack.KnapSackPiece(120, 240);
-
 		
-		long [] pesos = {70,  73,  77,  80,  82,  87,  90,  94,  98,  106, 110, 113, 115, 118, 120};
-		long [] valor = {135, 139, 149, 150, 156, 163, 173, 184, 192, 201, 210, 214, 221, 229, 240};
 		long res = KnapSack.knapSackRecursive(capacidade, pieces);
 		
 		assertEquals(1458, res);
