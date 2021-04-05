@@ -1,5 +1,8 @@
 package br.pucrs.progdinam;
 
+import br.pucrs.util.ContagemRes;
+import br.pucrs.util.TimeCounter;
+
 public class KnapSack {
 	public static class KnapSackPiece {
 		private long peso;
@@ -30,26 +33,43 @@ public class KnapSack {
 //	m[i,w]=m[i-1,w] if wi > w (the new item is more than the current weight limit)
 //	m[i,w]=max(m[i-1,w],m[i-1,w-wi]+vi) if  wi <= w.
 	
-	public static long knapSackRecursive(long capacidade, KnapSackPiece[] pieces)  {
-		long res = 0;
+	public static ContagemRes knapSackRecursive(long capacidade, KnapSackPiece[] pieces)  {
+		ContagemRes  res = new ContagemRes();
 		int nroItens = pieces.length;
+		long [] resVet = new long[1];
 		
-		res = knapSackRecursive(nroItens - 1, capacidade, pieces);
+		res.setIteracoes(0);
+		res.setInstrucoes(0);
+		resVet[0] = knapSackRecursive(nroItens - 1, capacidade, pieces, res);
+		res.setResult(resVet);
+		
 		return res;
 	}
 
-	private static long knapSackRecursive(int item, long capacidade, KnapSackPiece [] pieces) {
+	private static long knapSackRecursive(int item, long capacidade, KnapSackPiece [] pieces, ContagemRes resCont) {
 		long res = 0;
 		
-		if (item == -1)
+		resCont.incrIteracoes(1);
+		resCont.incrInstrucoes(1);
+		if (item == -1) {
+			resCont.incrInstrucoes(1);
 			res = 0;
-		else if (pieces[item].getPeso() > capacidade)
-				res = knapSackRecursive(item-1, capacidade, pieces);
-		else 
-				res = Math.max(knapSackRecursive(item-1, capacidade, pieces), 
-								knapSackRecursive(item-1, capacidade - pieces[item].getPeso(), pieces) 
-								                     + pieces[item].getValor());
+		}
+		else {
+				resCont.incrInstrucoes(4);
+				if (pieces[item].getPeso() > capacidade) {
+					resCont.incrInstrucoes(3);
+					res = knapSackRecursive(item-1, capacidade, pieces, resCont);
+				}
+				else {
+						resCont.incrInstrucoes(14);
+						res = Math.max(knapSackRecursive(item-1, capacidade, pieces, resCont), 
+										knapSackRecursive(item-1, capacidade - pieces[item].getPeso(), pieces, resCont) 
+															+ pieces[item].getValor());
+				}
+		}
 		
+		resCont.incrInstrucoes(1);
 		return res;
 	}
 
