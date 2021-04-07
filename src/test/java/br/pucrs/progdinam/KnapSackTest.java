@@ -5,13 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import br.pucrs.progdinam.KnapSack.KnapSackPiece;
+import br.pucrs.util.ContagemRes;
 
 class KnapSackTest {
 //
 	@Test
 	void KnapSackRecursiveTest1() {
 		long capacidade = 15;
-		KnapSack.KnapSackPiece[] pieces = new KnapSack.KnapSackPiece[5];
+		KnapSackPiece[] pieces = new KnapSackPiece[5];
 		
 		pieces[0] = new KnapSack.KnapSackPiece(12,4);
 		pieces[1] = new KnapSack.KnapSackPiece(4,10);
@@ -19,9 +20,9 @@ class KnapSackTest {
 		pieces[3] = new KnapSack.KnapSackPiece(1,2);
 		pieces[4] = new KnapSack.KnapSackPiece(1,1);
 		
-		long res = KnapSack.knapSackRecursive(capacidade, pieces);
+		ContagemRes res = KnapSack.knapSackRecursive(capacidade, pieces);
 		
-		assertEquals(15, res);
+		assertEquals(15, res.getResult()[0]);
 	}
 
 	@Test
@@ -40,9 +41,9 @@ class KnapSackTest {
 		pieces[8] = new KnapSack.KnapSackPiece(89,87);
 		pieces[9] = new KnapSack.KnapSackPiece(82,72);
 
-		long res = KnapSack.knapSackRecursive(capacidade, pieces);
+		ContagemRes res = KnapSack.knapSackRecursive(capacidade, pieces);
 		
-		assertEquals(309, res);
+		assertEquals(309, res.getResult()[0]);
 	}
 
 	@Test
@@ -67,9 +68,9 @@ class KnapSackTest {
 		pieces[13] = new KnapSack.KnapSackPiece(118, 229);
 		pieces[14] = new KnapSack.KnapSackPiece(120, 240);
 		
-		long res = KnapSack.knapSackRecursive(capacidade, pieces);
+		ContagemRes res = KnapSack.knapSackRecursive(capacidade, pieces);
 		
-		assertEquals(1458, res);
+		assertEquals(1458, res.getResult()[0]);
 	}
 
 }

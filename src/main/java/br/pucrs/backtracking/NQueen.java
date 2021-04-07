@@ -23,7 +23,7 @@ public class NQueen {
 			return res;
 		else if (eValida(linha, coluna, res)) {
 				Integer [] pos = new Integer[2];
-				res[linha][coluna]
+				res[linha][coluna] = 0; //<<<<---- Só para compilar.
 				pos[0] = 0;
 				pos[1] = 0;
 				pilha.push(pos);

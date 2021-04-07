@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: br.pucrs.progdinam.KnapSackTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in br.pucrs.progdinam.KnapSackTest
+KnapSackRecursiveTest1  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: br/pucrs/util/ContagemRes
+	at br.pucrs.progdinam.KnapSackTest.KnapSackRecursiveTest1(KnapSackTest.java:23)
+Caused by: java.lang.ClassNotFoundException: br.pucrs.util.ContagemRes
+	at br.pucrs.progdinam.KnapSackTest.KnapSackRecursiveTest1(KnapSackTest.java:23)
+
+KnapSackRecursiveTest2  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: br/pucrs/util/ContagemRes
+	at br.pucrs.progdinam.KnapSackTest.KnapSackRecursiveTest2(KnapSackTest.java:44)
+
+KnapSackRecursiveTest3  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: br/pucrs/util/ContagemRes
+	at br.pucrs.progdinam.KnapSackTest.KnapSackRecursiveTest3(KnapSackTest.java:71)
+
