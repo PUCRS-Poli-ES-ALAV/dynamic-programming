@@ -4,33 +4,41 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import br.pucrs.util.ContagemRes;
+
 class EdtDistanceTest {
 	private EdtDistance ed = new EdtDistance();
 	private long paraNada = 0;
 
 	@Test
 	void minTestComb1() {
-		assertEquals(1, ed.min(1L, 2L, 3L));
+		ContagemRes resCont = new ContagemRes();
+		assertEquals(1, ed.min(1L, 2L, 3L, resCont));
 	}
 	@Test
 	void minTestComb2() {
-		assertEquals(1, ed.min(1L, 3L, 2L));
+		ContagemRes resCont = new ContagemRes();
+		assertEquals(1, ed.min(1L, 3L, 2L, resCont));
 	}
 	@Test
 	void minTestComb3() {
-		assertEquals(1, ed.min(2L, 1L, 3L));
+		ContagemRes resCont = new ContagemRes();
+		assertEquals(1, ed.min(2L, 1L, 3L, resCont));
 	}
 	@Test
 	void minTestComb4() {
-		assertEquals(1, ed.min(2L, 3L, 1L));
+		ContagemRes resCont = new ContagemRes();
+		assertEquals(1, ed.min(2L, 3L, 1L, resCont));
 	}
 	@Test
 	void minTestComb5() {
-		assertEquals(1, ed.min(3L, 1L, 2L));
+		ContagemRes resCont = new ContagemRes();
+		assertEquals(1, ed.min(3L, 1L, 2L, resCont));
 	}
 	@Test
 	void minTestComb6() {
-		assertEquals(1, ed.min(3L, 2L, 1L));
+		ContagemRes resCont = new ContagemRes();
+		assertEquals(1, ed.min(3L, 2L, 1L, resCont));
 	}
 	
 	@Test
@@ -56,27 +64,33 @@ class EdtDistanceTest {
 	
 	@Test
 	void EdProgDinamTest1() {
-		assertEquals(3, ed.EDProgDinam("casa", "pai"));
+		ContagemRes resCont = ed.EDProgDinam("casa", "pai");
+		assertEquals(3, resCont.getResult()[0]);
 	}
 	@Test
 	void EdProgDinamTest2() {
-		assertEquals(1, ed.EDProgDinam("islander", "slander"));
+		ContagemRes resCont = ed.EDProgDinam("islander", "slander");
+		assertEquals(1, resCont.getResult()[0]);
 	}
 	@Test
 	void EdProgDinamTest3() {
-		assertEquals(3, ed.EDProgDinam("mart", "karma"));
+		ContagemRes resCont = ed.EDProgDinam("mart", "karma");
+		assertEquals(3, resCont.getResult()[0]);
 	}
 	@Test
 	void EdProgDinamTest4() {
-		assertEquals(3, ed.EDProgDinam("kitten", "sitting"));
+		ContagemRes resCont = ed.EDProgDinam("kitten", "sitting");
+		assertEquals(3, resCont.getResult()[0]);
 	}
 	@Test
 	void EdProgDinamTest5() {
-		assertEquals(5, ed.EDProgDinam("intention", "execution"));
+		ContagemRes resCont = ed.EDProgDinam("intention", "execution");
+		assertEquals(5, resCont.getResult()[0]);
 	}
 	
 	@Test
 	void EdProgDinamTest6() {
-		assertEquals(10, ed.EDProgDinam("Casablanca", "Portentoso"));
+		ContagemRes resCont = ed.EDProgDinam("Casablanca", "Portentoso");
+		assertEquals(10, resCont.getResult()[0]);
 	}
 }

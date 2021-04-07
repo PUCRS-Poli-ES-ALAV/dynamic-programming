@@ -5,7 +5,7 @@ import br.pucrs.util.ContagemRes;
 
 public class AppDemo {
 	public static void printKnapSack(KnapSackPiece [] p, long c) {
-		System.out.println("\n**********");
+		System.out.println("**********");
 		System.out.println("Capacidade da Mochila = " + c);
 		System.out.println("Pares: (peso, valor)");
 		for (int i = 0; i < p.length; i ++) {
@@ -14,48 +14,49 @@ public class AppDemo {
 		System.out.println("\n");
 	}
 	
-	public static void printStatsKnapSack(String subtitle, ContagemRes resCont) {
-		System.out.println("Maior valor " + subtitle + " = " + resCont.getResult()[0] );
-		System.out.println("Número de Iterações = " + subtitle + " = " + resCont.getIteracoes());
-		System.out.println("Número de Instruções = " + subtitle + " = " + resCont.getInstrucoes() + "\n");
+	public static void printEditDistance(String s1, String s2) {
+		System.out.println("**********");
+		System.out.println("Textos: \n" + "String 1: " + s1 + "\nString 2: " + s2);
+		System.out.println("\n");
 	}
 	
-	public static void printEditDistance() {
-		
+	public static void printStats(String subtitle, ContagemRes resCont) {
+		System.out.println("Maior valor (" + subtitle + ") = " + resCont.getResult()[0] );
+		System.out.println("Número de Iterações (" + subtitle + ") = " + resCont.getIteracoes());
+		System.out.println("Número de Instruções (" + subtitle + ") = " + resCont.getInstrucoes() + "\n");
 	}
 	
 	public static void main(String[] args) {
 		EdtDistance ed = new EdtDistance();
 		String str1, str2;
-		long res = 0;
 		ContagemRes resCont;
 		KnapSackPiece [] pieces;
 	 
-		System.out.println("\n\nEdit Distance");
+		System.out.println("\n\n----> Edit Distance");
 		str1 = "Casablanca";
 		str2 = "Portentoso";
-		System.out.println("Textos: \n" + "String 1: " + str1 + "\nString 2: " + str2);
-		res = ed.EDProgDinam(str1, str2);
-		System.out.println("Distancia (Prog Dinam) = " + res);
-		res = ed.EDRecursive(str1, str2);
-		System.out.println("Distancia (Recursive) " + res);
+		printEditDistance(str1, str2);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+		resCont = ed.EDRecursive(str1, str2);
+		printStats("Recursive", resCont);
 
-		System.out.println("Edit Distance\n");
 		str1 = "abcdefghijklmnop";
 		str2 = "rstuvwxyz";
-		System.out.println("Textos: \n" + "String 1: " + str1 + "\nString 2: " + str2);
-		res = ed.EDProgDinam(str1, str2);
-		System.out.println("Distancia (Prog Dinam) = " + res);
-		res = ed.EDRecursive(str1, str2);
-		System.out.println("Distancia (Recursive) " + res);
-
+		printEditDistance(str1, str2);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+		resCont = ed.EDRecursive(str1, str2);
+		printStats("Recursive", resCont);
 		
 		str1 = "Maven, a Yiddish word meaning";
 		str2 = "This post is not about deep";
-		System.out.println("\nTextos: \n" + "String 1: " + str1 + "\nString 2: " + str2);
-		res = ed.EDProgDinam(str1, str2);
-		System.out.println("Distancia (Prog Dinam) = " + res);
-
+		printEditDistance(str1, str2);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+//		resCont = ed.EDRecursive(str1, str2);
+//		printStats("Recursive", resCont);
+		
 		str1 = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
 				"simplify the build processes in the Jakarta Turbine project. There were several" + 
 				" projects, each with their own Ant build files, that were all slightly different." +
@@ -70,11 +71,13 @@ public class AppDemo {
 				"ask? I am going to try to answer this question in this article.\r\n" + 
 			   "Go to the profile of Marin Vlastelica Pogančić" + 
 			   "Marin Vlastelica Pogančić Jun";
-		System.out.println("\nTextos: \n" + "String 1: " + str1 + "\nString 2: " + str2);
-		res = ed.EDProgDinam(str1, str2);
-		System.out.println("Distancia (Prog Dinam) = " + res);
+		printEditDistance(str1, str2);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+//		resCont = ed.EDRecursive(str1, str2);
+//		printStats("Recursive", resCont);
 		
-		System.out.println("\n\n*******Knapsack Problem");
+		System.out.println("\n\n----> Knapsack Problem");
 		pieces = new KnapSack.KnapSackPiece[10];
 		pieces[0] = new KnapSack.KnapSackPiece(23, 92);
 		pieces[1] = new KnapSack.KnapSackPiece(31, 57);
@@ -89,7 +92,7 @@ public class AppDemo {
 
 		printKnapSack(pieces, 165);
 		resCont = KnapSack.knapSackRecursive(165, pieces);
-		printStatsKnapSack("Recursive", resCont);
+		printStats("Recursive", resCont);
 		
 		pieces = new KnapSack.KnapSackPiece[6];
 		pieces[0] = new KnapSack.KnapSackPiece(56, 50);
@@ -101,6 +104,6 @@ public class AppDemo {
 
 		printKnapSack(pieces, 190);
 		resCont = KnapSack.knapSackRecursive(190, pieces);
-		printStatsKnapSack("Recursive", resCont);
+		printStats("Recursive", resCont);
 	}
 }
