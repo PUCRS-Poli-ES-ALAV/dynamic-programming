@@ -43,23 +43,28 @@ class EdtDistanceTest {
 	
 	@Test
 	void EdRecursiveTest1() {
-		assertEquals(3, ed.EDRecursive("casa", "pai"));
+		ContagemRes resCont = ed.EDRecursive("casa", "pai");
+		assertEquals(3, resCont.getResult()[0]);
 	}
 	@Test
 	void EdRecursiveTest2() {
-		assertEquals(1, ed.EDRecursive("islander", "slander"));
+		ContagemRes resCont = ed.EDRecursive("islander", "slander");
+		assertEquals(1, resCont.getResult()[0]);
 	}
 	@Test
 	void EdRecursiveTest3() {
-		assertEquals(3, ed.EDRecursive("mart", "karma"));
+		ContagemRes resCont = ed.EDRecursive("mart", "karma");
+		assertEquals(3, resCont.getResult()[0]);
 	}
 	@Test
 	void EdRecursiveTest4() {
-		assertEquals(3, ed.EDRecursive("kitten", "sitting"));
+		ContagemRes resCont = ed.EDRecursive("kitten", "sitting");
+		assertEquals(3, resCont.getResult()[0]);
 	}
 	@Test
 	void EdRecursiveTest5() {
-		assertEquals(5, ed.EDRecursive("intention", "execution"));
+		ContagemRes resCont = ed.EDRecursive("intention", "execution");
+		assertEquals(5, resCont.getResult()[0]);
 	}
 	
 	@Test

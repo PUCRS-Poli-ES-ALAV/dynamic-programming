@@ -109,7 +109,7 @@ public class EdtDistance {
 		//		devolva matriz[m][n];
 
 		ContagemRes resCont = new ContagemRes();
-		long res = 0;
+
 		long [] resVet = new long[1];
 		long custoExtra = 0;
 		int m = str1.length();
@@ -120,14 +120,14 @@ public class EdtDistance {
 		for (int i = 1; i <= m; i++) {
 			resCont.incrIteracoes(1);
 			resCont.incrInstrucoes(10);
-			
+
 			matriz[i][0] = matriz[i-1][0] + 1;
 		}
 
 		for (int j = 1; j <= n; j++) {
 			resCont.incrIteracoes(1);
 			resCont.incrInstrucoes(10);
-			
+
 			matriz[0][j] = matriz[0][j-1] + 1;
 		}
 
@@ -135,30 +135,31 @@ public class EdtDistance {
 		for (int i = 1; i <= m; i++) {
 			resCont.incrInstrucoes(3);
 			resCont.incrInstrucoes(1);
-			
+
 			for (int j = 1; j <= n; j++) {
 				resCont.incrIteracoes(1);
 				resCont.incrInstrucoes(3);
 				resCont.incrInstrucoes(7);
-				
+
 				if (str1.charAt(i-1) == str2.charAt(j-1)) {
 					resCont.incrInstrucoes(1);
-					
+
 					custoExtra = 0; //Operação M;
 				}
 				else {
-					resCont.incrInstrucoes(16);
-					
+					resCont.incrInstrucoes(1);
+
 					custoExtra = 1; //Operação S;
-					matriz[i][j] = min(matriz[i-1][j] + 1, 
-										matriz[i][j-1] + 1,
-										matriz[i-1][j-1] + custoExtra, resCont);
 				}
+
+				resCont.incrInstrucoes(15);
+				matriz[i][j] = min(matriz[i-1][j] + 1, 
+						matriz[i][j-1] + 1,
+						matriz[i-1][j-1] + custoExtra, resCont);
 			}
 		}
-		
+
 		resCont.incrInstrucoes(7);
-		System.out.println(matriz[m][n]);
 		resVet[0] = matriz[m][n];
 		resCont.setResult(resVet);
 		return resCont;
