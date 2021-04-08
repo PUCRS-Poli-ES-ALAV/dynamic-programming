@@ -32,51 +32,6 @@ public class AppDemo {
 		ContagemRes resCont;
 		KnapSackPiece [] pieces;
 	 
-		System.out.println("\n\n----> Edit Distance");
-		str1 = "Casablanca";
-		str2 = "Portentoso";
-		printEditDistance(str1, str2);
-		resCont = ed.EDProgDinam(str1, str2);
-		printStats("ProgDin", resCont);
-		resCont = ed.EDRecursive(str1, str2);
-		printStats("Recursive", resCont);
-
-		str1 = "abcdefghijklmnop";
-		str2 = "rstuvwxyz";
-		printEditDistance(str1, str2);
-		resCont = ed.EDProgDinam(str1, str2);
-		printStats("ProgDin", resCont);
-		resCont = ed.EDRecursive(str1, str2);
-		printStats("Recursive", resCont);
-		
-		str1 = "Maven, a Yiddish word meaning";
-		str2 = "This post is not about deep";
-		printEditDistance(str1, str2);
-		resCont = ed.EDProgDinam(str1, str2);
-		printStats("ProgDin", resCont);
-//		resCont = ed.EDRecursive(str1, str2);
-//		printStats("Recursive", resCont);
-		
-		str1 = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
-				"simplify the build processes in the Jakarta Turbine project. There were several" + 
-				" projects, each with their own Ant build files, that were all slightly different." +
-				"JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
-				"definition of what the project consisted of, an easy way to publish project information" +
-				"and a way to share JARs across several projects. The result is a tool that can now be" +
-				"used for building and managing any Java-based project. We hope that we have created " +
-				"something that will make the day-to-day work of Java developers easier and generally help " +
-				"with the comprehension of any Java-based project.";
-		str2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
-				"kernels. They are universally applicable in any machine learning algorithm. Why you might" +
-				"ask? I am going to try to answer this question in this article.\r\n" + 
-			   "Go to the profile of Marin Vlastelica Pogančić" + 
-			   "Marin Vlastelica Pogančić Jun";
-		printEditDistance(str1, str2);
-		resCont = ed.EDProgDinam(str1, str2);
-		printStats("ProgDin", resCont);
-//		resCont = ed.EDRecursive(str1, str2);
-//		printStats("Recursive", resCont);
-		
 		System.out.println("\n\n----> Knapsack Problem");
 		pieces = new KnapSack.KnapSackPiece[10];
 		pieces[0] = new KnapSack.KnapSackPiece(23, 92);
@@ -105,5 +60,50 @@ public class AppDemo {
 		printKnapSack(pieces, 190);
 		resCont = KnapSack.knapSackRecursive(190, pieces);
 		printStats("Recursive", resCont);
+		
+		System.out.println("\n\n----> Edit Distance");
+		str1 = "Casablanca";
+		str2 = "Portentoso";
+		printEditDistance(str1, str2);
+		resCont = ed.EDRecursive(str1, str2);
+		printStats("Recursive", resCont);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+
+		str1 = "abcdefghijklmnop";
+		str2 = "rstuvwxyz";
+		printEditDistance(str1, str2);
+		resCont = ed.EDRecursive(str1, str2);
+		printStats("Recursive", resCont);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+		
+		str1 = "Maven, a Yiddish word meaning";
+		str2 = "This post is not about deep";
+		printEditDistance(str1, str2);
+//		resCont = ed.EDRecursive(str1, str2);
+//		printStats("Recursive", resCont);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+		
+		str1 = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
+				"simplify the build processes in the Jakarta Turbine project. There were several" + 
+				" projects, each with their own Ant build files, that were all slightly different." +
+				"JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+				"definition of what the project consisted of, an easy way to publish project information" +
+				"and a way to share JARs across several projects. The result is a tool that can now be" +
+				"used for building and managing any Java-based project. We hope that we have created " +
+				"something that will make the day-to-day work of Java developers easier and generally help " +
+				"with the comprehension of any Java-based project.";
+		str2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
+				"kernels. They are universally applicable in any machine learning algorithm. Why you might" +
+				"ask? I am going to try to answer this question in this article.\r\n" + 
+			   "Go to the profile of Marin Vlastelica Pogančić" + 
+			   "Marin Vlastelica Pogančić Jun";
+		printEditDistance(str1, str2);
+//		resCont = ed.EDRecursive(str1, str2);
+//		printStats("Recursive", resCont);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
 	}
 }
