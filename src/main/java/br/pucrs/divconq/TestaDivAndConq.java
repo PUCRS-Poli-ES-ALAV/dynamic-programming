@@ -1,7 +1,7 @@
 package br.pucrs.divconq;
 
+import br.pucrs.sorts.Sorts;
 import br.pucrs.util.ContagemRes;
-import sort_algos.Sorts;
 
 public class TestaDivAndConq {
 

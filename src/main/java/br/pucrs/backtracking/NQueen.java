@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Deque;
 
 public class NQueen {
-	public int [][] nQueenBackTrackRec(int dim) {
+	public int [] nQueenBackTrackRec(int dim) {
 		int [][] res = new int[2][dim];
 		Deque<Integer[]>pilha = new LinkedList<Integer[]>();
 
@@ -14,7 +14,7 @@ public class NQueen {
 		pilha.push(posInit);
 		res = nQueenBackTrackRec(dim, 1, 0, res, pilha);
 
-		return res;
+		return new int[1];  //DUMMY
 	}
 
 	private int[][] nQueenBackTrackRec(int dim, int linha, int coluna, int[][] res, Deque<Integer[]> pilha) {
