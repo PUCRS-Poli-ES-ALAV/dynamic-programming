@@ -49,6 +49,10 @@ public class AppDemo {
 		resCont = KnapSack.knapSackRecursive(165, pieces);
 		printStats("Recursive", resCont);
 		
+		printKnapSack(pieces, 165);
+		resCont = KnapSack.knapSackProgDinam(165, pieces);
+		printStats("Prog. Dinâmica", resCont);
+
 		pieces = new KnapSack.KnapSackPiece[6];
 		pieces[0] = new KnapSack.KnapSackPiece(56, 50);
 		pieces[1] = new KnapSack.KnapSackPiece(59, 50);
@@ -62,6 +66,15 @@ public class AppDemo {
 		printStats("Recursive", resCont);
 		
 		System.out.println("\n\n----> Edit Distance");
+		str1 = "casa";
+		str2 = "pai";
+		printEditDistance(str1, str2);
+		resCont = ed.EDRecursive(str1, str2);
+		printStats("Recursive", resCont);
+		resCont = ed.EDProgDinam(str1, str2);
+		printStats("ProgDin", resCont);
+
+
 		str1 = "Casablanca";
 		str2 = "Portentoso";
 		printEditDistance(str1, str2);

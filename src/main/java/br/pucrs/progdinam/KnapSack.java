@@ -1,7 +1,8 @@
 package br.pucrs.progdinam;
 
+import javax.lang.model.util.ElementScanner14;
+
 import br.pucrs.util.ContagemRes;
-import br.pucrs.util.TimeCounter;
 
 public class KnapSack {
 	public static class KnapSackPiece {
@@ -73,7 +74,21 @@ public class KnapSack {
 		return res;
 	}
 
-	public static ContagemRes knapsackProgDinam(long capacidade, KnapSackPiece[] pieces) {
+	public static ContagemRes knapSackProgDinam(long capacidade, KnapSackPiece[] pieces)  {
+		ContagemRes  res = new ContagemRes();
+		int nroItens = pieces.length;
+		long [] resVet = new long[1];
+		
+		res.setIteracoes(0);
+		res.setInstrucoes(0);
+		resVet[0] = knapSackProgDinam(capacidade, pieces, res);
+		res.setResult(resVet);
+		
+		return res;
+	}
+
+
+	public static long knapSackProgDinam(long capacidade, KnapSackPiece[] pieces, ContagemRes contRes) {
 //			N = número de produtos;
 //			C = capacidade real da mochila
 //		
@@ -90,18 +105,23 @@ public class KnapSack {
 //						maxTab[i][j] = maxTab[i-1][j];
 //			
 //			Retorne maxTab[N][C] 
-		long res = 0;
-		ContagemRes resCont = new ContagemRes();
-		long [] resVet = new long[1];
+		
 		long maxTab[][] = new long[pieces.length+1][(int) (capacidade + 1)];
 		
 		for (int linha = 0; linha < pieces.length + 1; linha++)
-			for (int coluna = 0; coluna < capacidade + 1; coluna ++)
+			for (int coluna = 0; coluna < capacidade + 1; coluna ++) {
+				contRes.incrIteracoes(1);
 				maxTab[linha][coluna] = 0;
+			}
 		
-		//for (i = )
-		
-		return resCont;
+		for (int i = 1; i < pieces.length + 1; i++)
+			for (int j = 1; j < capacidade + 1; j++)
+				if (pieces[i-1].peso <= j)
+					maxTab[i][j] = Math.max(maxTab[i-1][j], pieces[i-1].valor + maxTab[i-1][j - (int)pieces[i-1].peso]);
+				else 
+					maxTab[i][j] = maxTab[i-1][j];
+
+		return maxTab[pieces.length][(int) capacidade];
 	}
 	
 	public static long knapsackGreedy(long capacidade, KnapSackPiece[] pieces) {
