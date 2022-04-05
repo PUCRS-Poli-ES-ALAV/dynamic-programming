@@ -65,8 +65,8 @@ public class AppDemo {
 		resCont = KnapSack.knapSackProgDinam(190, pieces);
 		printStats("Prog. Dinâmica", resCont);
 
-		pieces = new KnapSack.KnapSackPiece[190];
-		for (int i = 0; i < 190; i ++) {
+		pieces = new KnapSack.KnapSackPiece[30];
+		for (int i = 0; i < 30; i ++) {
 			pieces[i] = new KnapSack.KnapSackPiece(1, i % 20);
 		}
 		
