@@ -104,7 +104,7 @@ public class KnapSack {
 //					Senão
 //						maxTab[i][j] = maxTab[i-1][j];
 //			
-//			Retorne maxTab[N][C] 
+//			Retorne maxTab[N][C]  
 		
 		long maxTab[][] = new long[pieces.length+1][(int) (capacidade + 1)];
 		
@@ -115,11 +115,13 @@ public class KnapSack {
 			}
 		
 		for (int i = 1; i < pieces.length + 1; i++)
-			for (int j = 1; j < capacidade + 1; j++)
+			for (int j = 1; j < capacidade + 1; j++) {
+				contRes.incrIteracoes(1)
 				if (pieces[i-1].peso <= j)
 					maxTab[i][j] = Math.max(maxTab[i-1][j], pieces[i-1].valor + maxTab[i-1][j - (int)pieces[i-1].peso]);
 				else 
 					maxTab[i][j] = maxTab[i-1][j];
+			}
 
 		return maxTab[pieces.length][(int) capacidade];
 	}
