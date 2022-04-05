@@ -65,7 +65,6 @@ public class EdtDistance {
 				}
 			}
 		}
-
 		return res;
 	}
 

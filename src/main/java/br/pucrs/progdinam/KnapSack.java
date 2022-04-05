@@ -1,7 +1,5 @@
 package br.pucrs.progdinam;
 
-import javax.lang.model.util.ElementScanner14;
-
 import br.pucrs.util.ContagemRes;
 
 public class KnapSack {
@@ -76,7 +74,7 @@ public class KnapSack {
 
 	public static ContagemRes knapSackProgDinam(long capacidade, KnapSackPiece[] pieces)  {
 		ContagemRes  res = new ContagemRes();
-		int nroItens = pieces.length;
+		//int nroItens = pieces.length;
 		long [] resVet = new long[1];
 		
 		res.setIteracoes(0);
@@ -116,7 +114,7 @@ public class KnapSack {
 		
 		for (int i = 1; i < pieces.length + 1; i++)
 			for (int j = 1; j < capacidade + 1; j++) {
-				contRes.incrIteracoes(1)
+				contRes.incrIteracoes(1);
 				if (pieces[i-1].peso <= j)
 					maxTab[i][j] = Math.max(maxTab[i-1][j], pieces[i-1].valor + maxTab[i-1][j - (int)pieces[i-1].peso]);
 				else 

@@ -48,8 +48,6 @@ public class AppDemo {
 		printKnapSack(pieces, 165);
 		resCont = KnapSack.knapSackRecursive(165, pieces);
 		printStats("Recursive", resCont);
-		
-		printKnapSack(pieces, 165);
 		resCont = KnapSack.knapSackProgDinam(165, pieces);
 		printStats("Prog. Dinâmica", resCont);
 
@@ -64,7 +62,22 @@ public class AppDemo {
 		printKnapSack(pieces, 190);
 		resCont = KnapSack.knapSackRecursive(190, pieces);
 		printStats("Recursive", resCont);
+		resCont = KnapSack.knapSackProgDinam(190, pieces);
+		printStats("Prog. Dinâmica", resCont);
+
+		pieces = new KnapSack.KnapSackPiece[190];
+		for (int i = 0; i < 190; i ++) {
+			pieces[i] = new KnapSack.KnapSackPiece(1, i % 20);
+		}
 		
+		printKnapSack(pieces, 190);
+		resCont = KnapSack.knapSackRecursive(190, pieces);
+		printStats("Recursive", resCont);
+		resCont = KnapSack.knapSackProgDinam(190, pieces);
+		printStats("Prog. Dinâmica", resCont);
+		
+
+
 		System.out.println("\n\n----> Edit Distance");
 		str1 = "casa";
 		str2 = "pai";
