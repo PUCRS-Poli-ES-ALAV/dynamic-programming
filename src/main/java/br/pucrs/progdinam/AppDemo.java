@@ -1,6 +1,7 @@
 package br.pucrs.progdinam;
 
 import br.pucrs.progdinam.KnapSack.KnapSackPiece;
+import br.pucrs.proggulos.ColecaoIntervalos;
 import br.pucrs.util.ContagemRes;
 
 public class AppDemo {
@@ -20,6 +21,19 @@ public class AppDemo {
 		System.out.println("\n");
 	}
 	
+	
+	public static void printIntervalos(String s1, ColecaoIntervalos.Intervalos [] inter) {
+		System.out.println("**********");
+		System.out.println(s1 + ": ");
+
+		for (int i = 0; i < inter.length; i ++) {
+			System.out.print("(" + inter[i].getInicio() + ", " + inter[i].getFim() + ") ");
+		}
+
+		System.out.println("\n");
+	}
+	
+
 	public static void printStats(String subtitle, ContagemRes resCont) {
 		System.out.println("Maior valor (" + subtitle + ") = " + resCont.getResult()[0] );
 		System.out.println("Número de Iterações (" + subtitle + ") = " + resCont.getIteracoes());
@@ -28,9 +42,11 @@ public class AppDemo {
 	
 	public static void main(String[] args) {
 		EdtDistance ed = new EdtDistance();
+		ColecaoIntervalos colIntervalos = new ColecaoIntervalos();
 		String str1, str2;
 		ContagemRes resCont;
 		KnapSackPiece [] pieces;
+		ColecaoIntervalos.Intervalos [] intervalos, resIntervalos;
 	 
 		System.out.println("\n\n----> Knapsack Problem");
 		pieces = new KnapSack.KnapSackPiece[10];
@@ -131,5 +147,53 @@ public class AppDemo {
 //		printStats("Recursive", resCont);
 		resCont = ed.EDProgDinam(str1, str2);
 		printStats("ProgDin", resCont);
+
+
+		System.out.println("\n\n----> Escalonamento de Intervalos");
+		intervalos = new ColecaoIntervalos.Intervalos[11];	
+
+		intervalos[0] = new ColecaoIntervalos.Intervalos(2, 4);
+		intervalos[1] = new ColecaoIntervalos.Intervalos(4, 5);
+		intervalos[2] = new ColecaoIntervalos.Intervalos(1, 6);
+		intervalos[3] = new ColecaoIntervalos.Intervalos(6, 7);
+		intervalos[4] = new ColecaoIntervalos.Intervalos(4, 8);
+		intervalos[5] = new ColecaoIntervalos.Intervalos(6, 9);
+		intervalos[6] = new ColecaoIntervalos.Intervalos(7, 10);
+		intervalos[7] = new ColecaoIntervalos.Intervalos(9, 11);
+		intervalos[8] = new ColecaoIntervalos.Intervalos(9, 12);
+		intervalos[9] = new ColecaoIntervalos.Intervalos(3, 13);
+		intervalos[10] = new ColecaoIntervalos.Intervalos(13, 14);
+
+		printIntervalos("Intervalos de Entrada", intervalos);
+		ContagemRes resContInter = new ContagemRes();
+		resIntervalos = colIntervalos.escalonamentoIntervalos(intervalos, resContInter);
+		printIntervalos("Intervalos Resultantes", resIntervalos);
+		printStats("Escalonamento", resContInter);
+		
+
+		intervalos = new ColecaoIntervalos.Intervalos[15];	
+
+		intervalos[0] = new ColecaoIntervalos.Intervalos(2, 4);
+		intervalos[1] = new ColecaoIntervalos.Intervalos(4, 8);
+		intervalos[2] = new ColecaoIntervalos.Intervalos(8, 12);
+		intervalos[3] = new ColecaoIntervalos.Intervalos(12, 16);
+		intervalos[4] = new ColecaoIntervalos.Intervalos(16, 20);
+		intervalos[5] = new ColecaoIntervalos.Intervalos(20, 24);
+		intervalos[6] = new ColecaoIntervalos.Intervalos(25, 30);
+		intervalos[7] = new ColecaoIntervalos.Intervalos(30, 34);
+		intervalos[8] = new ColecaoIntervalos.Intervalos(34, 38);
+		intervalos[9] = new ColecaoIntervalos.Intervalos(38, 42);
+		intervalos[10] = new ColecaoIntervalos.Intervalos(42, 56);
+		intervalos[11] = new ColecaoIntervalos.Intervalos(42, 56);
+		intervalos[12] = new ColecaoIntervalos.Intervalos(42, 56);
+		intervalos[13] = new ColecaoIntervalos.Intervalos(42, 56);
+		intervalos[14] = new ColecaoIntervalos.Intervalos(42, 56);
+
+		printIntervalos("Intervalos de Entrada", intervalos);
+		resContInter = new ContagemRes();
+		resIntervalos = colIntervalos.escalonamentoIntervalos(intervalos, resContInter);
+		printIntervalos("Intervalos Resultantes", resIntervalos);
+		printStats("Escalonamento", resContInter);
+		
 	}
 }
