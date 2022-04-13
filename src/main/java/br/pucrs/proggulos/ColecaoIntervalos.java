@@ -28,7 +28,7 @@ public class ColecaoIntervalos {
             this.fim = fim;
         }
     }
-
+  
     public Intervalos[] escalonamentoIntervalos(Intervalos[] intervalos, ContagemRes resCont) {
         Intervalos[] aux = new Intervalos[intervalos.length], res;
         int qtd = 0;

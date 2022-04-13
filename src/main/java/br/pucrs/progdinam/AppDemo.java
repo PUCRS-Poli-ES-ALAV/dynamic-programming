@@ -1,53 +1,65 @@
 package br.pucrs.progdinam;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import br.pucrs.progdinam.KnapSack.KnapSackPiece;
+import br.pucrs.proggulos.Change;
 import br.pucrs.proggulos.ColecaoIntervalos;
 import br.pucrs.util.ContagemRes;
 
 public class AppDemo {
-	public static void printKnapSack(KnapSackPiece [] p, long c) {
+	public static void printKnapSack(KnapSackPiece[] p, long c) {
 		System.out.println("**********");
 		System.out.println("Capacidade da Mochila = " + c);
 		System.out.println("Pares: (peso, valor)");
-		for (int i = 0; i < p.length; i ++) {
+		for (int i = 0; i < p.length; i++) {
 			System.out.print("(" + p[i].getPeso() + ", " + p[i].getValor() + ")");
 		}
 		System.out.println("\n");
 	}
-	
+
 	public static void printEditDistance(String s1, String s2) {
 		System.out.println("**********");
 		System.out.println("Textos: \n" + "String 1: " + s1 + "\nString 2: " + s2);
 		System.out.println("\n");
 	}
-	
-	
-	public static void printIntervalos(String s1, ColecaoIntervalos.Intervalos [] inter) {
+
+	public static void printIntervalos(String s1, ColecaoIntervalos.Intervalos[] inter) {
 		System.out.println("**********");
 		System.out.println(s1 + ": ");
 
-		for (int i = 0; i < inter.length; i ++) {
+		for (int i = 0; i < inter.length; i++) {
 			System.out.print("(" + inter[i].getInicio() + ", " + inter[i].getFim() + ") ");
 		}
 
 		System.out.println("\n");
 	}
-	
+
+	public static void printMoedas(ArrayList<Long> lstMoedas) {
+		System.out.println("**********");
+		System.out.println("Lista de Moedas: " + lstMoedas);
+		System.out.println("\n");
+	}
 
 	public static void printStats(String subtitle, ContagemRes resCont) {
-		System.out.println("Maior valor (" + subtitle + ") = " + resCont.getResult()[0] );
-		System.out.println("Número de Iterações (" + subtitle + ") = " + resCont.getIteracoes());
+		System.out.print("Resultado (" + subtitle + ") = ");
+		
+		for (int i = 0; i < resCont.getResult().length; i++)
+		     System.out.print(resCont.getResult()[i] + " ");
+
+		System.out.println("\nNúmero de Iterações (" + subtitle + ") = " + resCont.getIteracoes());
 		System.out.println("Número de Instruções (" + subtitle + ") = " + resCont.getInstrucoes() + "\n");
 	}
-	
+
 	public static void main(String[] args) {
 		EdtDistance ed = new EdtDistance();
 		ColecaoIntervalos colIntervalos = new ColecaoIntervalos();
 		String str1, str2;
 		ContagemRes resCont;
-		KnapSackPiece [] pieces;
-		ColecaoIntervalos.Intervalos [] intervalos, resIntervalos;
-	 
+		KnapSackPiece[] pieces;
+		ColecaoIntervalos.Intervalos[] intervalos, resIntervalos;
+
 		System.out.println("\n\n----> Knapsack Problem");
 		pieces = new KnapSack.KnapSackPiece[10];
 		pieces[0] = new KnapSack.KnapSackPiece(23, 92);
@@ -82,17 +94,15 @@ public class AppDemo {
 		printStats("Prog. Dinâmica", resCont);
 
 		pieces = new KnapSack.KnapSackPiece[30];
-		for (int i = 0; i < 30; i ++) {
+		for (int i = 0; i < 30; i++) {
 			pieces[i] = new KnapSack.KnapSackPiece(1, i % 20);
 		}
-		
+
 		printKnapSack(pieces, 190);
 		resCont = KnapSack.knapSackRecursive(190, pieces);
 		printStats("Recursive", resCont);
 		resCont = KnapSack.knapSackProgDinam(190, pieces);
 		printStats("Prog. Dinâmica", resCont);
-		
-
 
 		System.out.println("\n\n----> Edit Distance");
 		str1 = "casa";
@@ -102,7 +112,6 @@ public class AppDemo {
 		printStats("Recursive", resCont);
 		resCont = ed.EDProgDinam(str1, str2);
 		printStats("ProgDin", resCont);
-
 
 		str1 = "Casablanca";
 		str2 = "Portentoso";
@@ -119,19 +128,19 @@ public class AppDemo {
 		printStats("Recursive", resCont);
 		resCont = ed.EDProgDinam(str1, str2);
 		printStats("ProgDin", resCont);
-		
+
 		str1 = "Maven, a Yiddish word meaning";
 		str2 = "This post is not about deep";
 		printEditDistance(str1, str2);
-//		resCont = ed.EDRecursive(str1, str2);
-//		printStats("Recursive", resCont);
+		// resCont = ed.EDRecursive(str1, str2);
+		// printStats("Recursive", resCont);
 		resCont = ed.EDProgDinam(str1, str2);
 		printStats("ProgDin", resCont);
-		
+
 		str1 = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
-				"simplify the build processes in the Jakarta Turbine project. There were several" + 
+				"simplify the build processes in the Jakarta Turbine project. There were several" +
 				" projects, each with their own Ant build files, that were all slightly different." +
-				"JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+				"JARs were checked into CVS. We wanted a standard way to build the projects, a clear " +
 				"definition of what the project consisted of, an easy way to publish project information" +
 				"and a way to share JARs across several projects. The result is a tool that can now be" +
 				"used for building and managing any Java-based project. We hope that we have created " +
@@ -139,18 +148,17 @@ public class AppDemo {
 				"with the comprehension of any Java-based project.";
 		str2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
 				"kernels. They are universally applicable in any machine learning algorithm. Why you might" +
-				"ask? I am going to try to answer this question in this article.\r\n" + 
-			   "Go to the profile of Marin Vlastelica Pogančić" + 
-			   "Marin Vlastelica Pogančić Jun";
+				"ask? I am going to try to answer this question in this article.\r\n" +
+				"Go to the profile of Marin Vlastelica Pogančić" +
+				"Marin Vlastelica Pogančić Jun";
 		printEditDistance(str1, str2);
-//		resCont = ed.EDRecursive(str1, str2);
-//		printStats("Recursive", resCont);
+		// resCont = ed.EDRecursive(str1, str2);
+		// printStats("Recursive", resCont);
 		resCont = ed.EDProgDinam(str1, str2);
 		printStats("ProgDin", resCont);
 
-
 		System.out.println("\n\n----> Escalonamento de Intervalos");
-		intervalos = new ColecaoIntervalos.Intervalos[11];	
+		intervalos = new ColecaoIntervalos.Intervalos[11];
 
 		intervalos[0] = new ColecaoIntervalos.Intervalos(2, 4);
 		intervalos[1] = new ColecaoIntervalos.Intervalos(4, 5);
@@ -169,10 +177,8 @@ public class AppDemo {
 		resIntervalos = colIntervalos.escalonamentoIntervalos(intervalos, resContInter);
 		printIntervalos("Intervalos Resultantes", resIntervalos);
 		printStats("Escalonamento", resContInter);
-		
 
-		intervalos = new ColecaoIntervalos.Intervalos[15];	
-
+		intervalos = new ColecaoIntervalos.Intervalos[15];
 		intervalos[0] = new ColecaoIntervalos.Intervalos(2, 4);
 		intervalos[1] = new ColecaoIntervalos.Intervalos(4, 8);
 		intervalos[2] = new ColecaoIntervalos.Intervalos(8, 12);
@@ -194,6 +200,67 @@ public class AppDemo {
 		resIntervalos = colIntervalos.escalonamentoIntervalos(intervalos, resContInter);
 		printIntervalos("Intervalos Resultantes", resIntervalos);
 		printStats("Escalonamento", resContInter);
-		
+
+		ArrayList<Long> lstMoedas = new ArrayList<Long>(Arrays.asList(100L, 50L, 25L, 10L, 5L, 1L));
+		Change change = new Change();
+		printMoedas(lstMoedas);
+		resCont = change.calcChange(lstMoedas, 289);
+		System.out.println("Valor: " + 289);
+		printStats("Guloso", resCont);
+		resCont = change.calcChange(lstMoedas, 100);
+		System.out.println("Valor: " + 100);
+		printStats("Guloso", resCont);
+		resCont = change.calcChange(lstMoedas, 12);
+		System.out.println("Valor: " + 12);
+		printStats("Guloso", resCont);
+		resCont = change.calcChange(lstMoedas, 201);
+		System.out.println("Valor: " + 201);
+		printStats("Guloso", resCont);
+		resCont = change.calcChange(lstMoedas, 191);
+		System.out.println("Valor: " + 191);
+		printStats("Guloso", resCont);
+		resCont = change.calcChange(lstMoedas, 314);
+		System.out.println("Valor: " + 314);
+		printStats("Guloso", resCont);
+		resCont = change.calcChange(lstMoedas, 217);
+		System.out.println("Valor: " + 217);
+		printStats("Guloso", resCont);
+		resCont = change.calcChange(lstMoedas, 54);
+		System.out.println("Valor: " + 54);
+		printStats("Guloso", resCont);
+
+		lstMoedas = new ArrayList<Long>(Arrays.asList(100L, 50L, 20L, 10L, 5L));
+		printMoedas(lstMoedas);
+
+		try {
+			resCont = change.calcChange(lstMoedas, 191);
+			System.out.println("Valor: " + 191);
+			printStats("Guloso", resCont);
+		} 
+		catch (RuntimeException e) {
+			System.out.println("Valor: " + 191);
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			resCont = change.calcChange(lstMoedas, 275);
+			System.out.println("Valor: " + 275);
+			printStats("Guloso", resCont);
+		} 
+		catch (RuntimeException e) {
+			System.out.println("Valor: " + 275);
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			resCont = change.calcChange(lstMoedas, 427);
+			System.out.println("Valor: " + 427);
+			printStats("Guloso", resCont);
+		} 
+		catch (RuntimeException e) {
+			System.out.println("Valor: " + 427);
+			System.out.println(e.getMessage());
+		}
 	}
+
 }
