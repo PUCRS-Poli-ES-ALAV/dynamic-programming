@@ -89,60 +89,83 @@ public class PatternMatchingDemo {
 		posicao = pm.pmBruteForce(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Brute Force -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Brute Force -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmRabinKarp(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Rabin-Karp -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Rabin-Karp -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmRabinKarpV2(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Rabin-KarpV2 -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Rabin-KarpV2 -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmKnuthMorrisPratt(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\tKnuth-Morris-Prat -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\tKnuth-Morris-Prat -> " + ". Iterações: " + pm.getIteracoes());
 		
 		txt = PatternMatchingDemo.geraString(500_000, 2); 
 		pat = PatternMatchingDemo.geraString(20_000, 2);
 		pat = pat + "Z";
 		System.out.println("\ntxt com " + 500_000 + "\npat com " + 20_001);
+
 		timer.initCounter();
 		posicao = pm.pmBruteForce(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Brute Force -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Brute Force -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmRabinKarp(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Rabin-Karp -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Rabin-Karp -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmRabinKarpV2(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Rabin-KarpV2 -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Rabin-KarpV2 -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmKnuthMorrisPratt(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\tKnuth-Morris-Prat -> " + posicao + ". Tempo: " + segundos);
-		
+		System.out.println("\tKnuth-Morris-Prat -> " + ". Iterações: " + pm.getIteracoes());
+
 		txt = PatternMatchingDemo.geraString(500_000, 2); 
 		pat = PatternMatchingDemo.geraString(20_000, 2);
 		txt = txt + "Z";
 		pat = pat + "Z";
 		System.out.println("\ntxt com " + 500_001 + "\npat com " + 20_001);
+
 		timer.initCounter();
 		posicao = pm.pmBruteForce(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Brute Force -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Brute Force -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmRabinKarp(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Rabin-Karp -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Rabin-Karp -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmRabinKarpV2(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\t       Rabin-KarpV2 -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\t       Rabin-KarpV2 -> " + ". Iterações: " + pm.getIteracoes());
+
 		timer.initCounter();
 		posicao = pm.pmKnuthMorrisPratt(txt, pat);
 		segundos = timer.getCounter();
 		System.out.println("\tKnuth-Morris-Prat -> " + posicao + ". Tempo: " + segundos);
+		System.out.println("\tKnuth-Morris-Prat -> " + ". Iterações: " + pm.getIteracoes());
 	}
 }

@@ -4,18 +4,41 @@ package br.pucrs.patternmatching;
 public class PatternMatching {
 	private final int TAM_ALFABETO = 128;
 	private final int NRO_PRIMO_GRANDE = 15487457;
+	private long iteracoes = 0;
+
+	public long getIteracoes() {
+		return iteracoes;
+	}
+
+	public void setIteracoes(long iteracoes) {
+		this.iteracoes = iteracoes;
+	}
+
+	private void incrIteracoes() {
+		iteracoes++;
+	}
 	
+	private void initIteracoes() {
+		iteracoes = 0;
+	}
+
 	public long pmBruteForce(String txt, String pat) {
 		long res = -1;
 		boolean achou = false;
-		int iniStr1, posStr1, posStr2;
+		int iniStr1;
+		int posStr1;
+		int posStr2;
 		
+		initIteracoes();
+
 		iniStr1 = posStr1 = 0;
 		while (!achou && posStr1 < txt.length()) {
+			incrIteracoes();
 			posStr1 = iniStr1;
 			posStr2 = 0;
 			while (posStr1 < txt.length() && posStr2 < pat.length() && 
 			       txt.charAt(posStr1) == pat.charAt(posStr2)) {
+				incrIteracoes();
 				posStr1++;
 				posStr2++;
 			}
@@ -38,8 +61,10 @@ public class PatternMatching {
 
 	private int hash(String s, int M) {
 	   int h = 0;
-	   for (int j = 0; j < M; j++)
+	   for (int j = 0; j < M; j++){
+		  incrIteracoes();
 	      h = (h * TAM_ALFABETO + s.charAt(j)) % NRO_PRIMO_GRANDE;
+	   }
 	   return h;
 	}
 	
@@ -48,7 +73,9 @@ public class PatternMatching {
 		   int N = txt.length();
 		   int patHash = hash(pat, M);
 		   
+		   initIteracoes();
 		   for (int i = 0; i <= N - M; i++) {
+			   incrIteracoes();
 		      long txtHash = hash(txt.substring(i, i+M), M);
 		      if (patHash == txtHash)
 		         return i; // ocorrência? colisão?
@@ -59,8 +86,10 @@ public class PatternMatching {
 	
 	private int hash(String s, int ini, int fim) {
 		   int h = 0;
-		   for (int j = ini; j <= fim; j++)
+		   for (int j = ini; j <= fim; j++){
+		   	  incrIteracoes();
 		      h = (h * TAM_ALFABETO + s.charAt(j)) % NRO_PRIMO_GRANDE;
+		   }
 		   return h;
 		}
 	
@@ -69,7 +98,9 @@ public class PatternMatching {
 		   int N = txt.length();
 		   int patHash = hash(pat, M);
 		   
+		   initIteracoes();
 		   for (int i = 0; i <= N - M; i++) {
+			  incrIteracoes();
 		      long txtHash = hash(txt, i, i+(M-1));
 		      if (patHash == txtHash)
 		         return i; // ocorrência? colisão?
@@ -90,6 +121,7 @@ public class PatternMatching {
 
 		// loop calcula lps[i] for i = 1 to M-1 
 		while (i < M) { 
+			incrIteracoes();
 			if (pat.charAt(i) == pat.charAt(len)) { 
 				len++; 
 				lps[i] = len; 
@@ -120,11 +152,14 @@ public class PatternMatching {
 		int lps[] = new int[M]; 
 		int j = 0; // index for pat[] 
 
+		initIteracoes();
+
 		// Calcula lps[] 
 		computeLPSArray(pat, M, lps); 
 
 		int i = 0; // index for txt[] 
 		while (i < N) { 
+			incrIteracoes();
 			if (pat.charAt(j) == txt.charAt(i)) { 
 				j++; 
 				i++; 
