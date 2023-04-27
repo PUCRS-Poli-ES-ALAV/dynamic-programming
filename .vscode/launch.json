@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "TestaDivAndConq",
+            "request": "launch",
+            "mainClass": "br.pucrs.divconq.TestaDivAndConq",
+            "projectName": "DynamicProg"
+        },
+        {
+            "type": "java",
+            "name": "PatternMatchingDemo",
+            "request": "launch",
+            "mainClass": "br.pucrs.patternmatching.PatternMatchingDemo",
+            "projectName": "DynamicProg"
+        },
+        {
+            "type": "java",
+            "name": "AppDemo",
+            "request": "launch",
+            "mainClass": "br.pucrs.progdinam.AppDemo",
+            "projectName": "DynamicProg"
+        }
+    ]
+}
