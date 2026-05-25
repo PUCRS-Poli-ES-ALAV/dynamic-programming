@@ -4,7 +4,20 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "NQueenAlt",
+            "request": "launch",
+            "mainClass": "br.pucrs.backtracking.NQueenAlt",
+            "projectName": "DynamicProg"
+        },
+        {
+            "type": "java",
+            "name": "TestaColecaoIntervalos",
+            "request": "launch",
+            "mainClass": "br.pucrs.proggulos.TestaColecaoIntervalos",
+            "projectName": "DynamicProg"
+        },
         {
             "type": "java",
             "name": "Current File",
