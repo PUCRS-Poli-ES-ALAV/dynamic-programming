@@ -12,8 +12,8 @@
 
   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.17</maven.compiler.target>
-        <maven.compiler.source>1.17</maven.compiler.source>
+        <maven.compiler.target>1.21</maven.compiler.target>
+        <maven.compiler.source>1.21</maven.compiler.source>
         <junit.jupiter.version>5.4.2</junit.jupiter.version>
   </properties>
   
@@ -25,16 +25,16 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<systemPath>/mnt/d/Users/mcmor/Dropbox/M/WSGitLocalNew/MavenRep/utiltimecounter.jar</systemPath>
+			<systemPath>/mnt/c/Users/mcmor/Dropbox/M/WSGitLocalNew/MavenRep/utiltimecounter.jar</systemPath>
 			<groupId>br.pucrs</groupId>
 			<artifactId>util</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
 		</dependency>
 		<dependency>
-			<systemPath>/mnt/d/Users/mcmor/Dropbox/M/WSGitLocalNew/MavenRep/Algorithms_Sort.jar</systemPath>
+			<systemPath>/mnt/c/Users/mcmor/Dropbox/M/WSGitLocalNew/MavenRep/Algorithms_Sort.jar</systemPath>
 			<groupId>br.pucrs</groupId>
-			<artifactId>util</artifactId>
+			<artifactId>sorts</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
 		</dependency>
@@ -47,7 +47,7 @@
     			<artifactId>maven-compiler-plugin</artifactId>
     			<version>3.8.0</version>
     			<configuration>
-       		 		<release>17</release>
+       		 		<release>21</release>
 					<compilerArgs>--enable-preview</compilerArgs>
     			</configuration>
 				
